@@ -13,9 +13,14 @@ function newPlayer(){
 }
 
 function playerUpdate(){
-	player.yVel += 0.1;
+	player.yVel += 0.2;
 	player.y += player.yVel;
+	playerCollision();
+}
+
+function playerCollision(){
 	player.onGround = false;
+	console.log(platforms.length-1);
 	for(var index = 0; index <= platforms.length-1; index+=1){
 		var platform = platforms[index];
 
@@ -26,9 +31,10 @@ function playerUpdate(){
 		}
 	}
 }
+
 function playerJump(){
 	if(player.onGround == true){
-		player.yVel -= 5;
+		player.yVel -= 7;
 		player.onGround = false;
 	}
 }
