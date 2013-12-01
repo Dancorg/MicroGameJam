@@ -1,5 +1,6 @@
 var stage;
 var canvas;
+var platforms = [];
 
 var keyup = 38;
 var keydown = 40;
@@ -20,6 +21,8 @@ function init() {
 	stage = new Stage(canvas);
 
 	player = newPlayer();
+	platform = newPlatform(50,150,75,22);
+	platforms.push(platform);
 	
 	Ticker.setFPS(60);
 	Ticker.on("tick", tick);
