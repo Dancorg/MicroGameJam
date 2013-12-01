@@ -3,7 +3,10 @@ function newPlayer(){
 	var player = new Shape(square);
 	player.x = 50;
 	player.y = 50;
+	player.w = 22;
+	player.h = 22;
 	player.yVel = 0;
+	player.onGround = false;
 
 	stage.addChild(player);
 	return player;
@@ -12,17 +15,20 @@ function newPlayer(){
 function playerUpdate(){
 	player.yVel += 0.1;
 	player.y += player.yVel;
-
-	for(var index = 0; platforms.length-1; index++){
+	player.onGround = false;
+	for(var index = 0; index <= platforms.length-1; index+=1){
 		var platform = platforms[index];
-		
+
 		if(player.x < platform.x+platform.w && player.x+player.w > platform.x && player.y<platform.y+platform.h && player.y+player.h>platform.y ){
-			console.log("coliision");
+			player.onGround = true;
 			player.yVel = 0;
-			player.y = platform.y;
+			player.y = platform.y-22;
 		}
 	}
 }
 function playerJump(){
-	player.yVel -= 10;
+	if(player.onGround == true){
+		player.yVel -= 5;
+		player.onGround = false;
+	}
 }

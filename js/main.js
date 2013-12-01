@@ -35,6 +35,7 @@ function tick(e) {
 	playerUpdate();
 	stage.update(e);
 
+
 }
 function handleKeyUp(e)
 {

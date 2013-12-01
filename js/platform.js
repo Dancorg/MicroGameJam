@@ -3,6 +3,8 @@ function newPlatform(x,y,w,h){
 	var platform = new Shape(square);
 	platform.x = x;
 	platform.y = y;
+	platform.w = w;
+	platform.h = h;
 
 	stage.addChild(platform);
 	return platform;
