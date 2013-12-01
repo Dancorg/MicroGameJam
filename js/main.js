@@ -14,61 +14,22 @@ var keya = 65;
 var keyd = 68;
 var keyp = 80;
 
-document.onkeydown = handleKeyDown;
-document.onkeyup = handleKeyUp;
 
 function init() {
 	canvas = document.getElementById("canvas");
 	stage = new Stage(canvas);
 
+	player = newPlayer();
+	
 	Ticker.setFPS(60);
-	Ticker.addListener(window);
-}
-
-function tick() {
+	Ticker.on("tick", tick);
 
 }
 
-function handleKeyDown(e) {
-	switch(e.keyCode) {
-		case keyj:
-			return false;
-		case keyk:
-			return false;
-		case keyl:
-			return false;
 
-		case keyp:
-			return false;
-
-		case keyup:
-		case keyw:
-			return false;
-		case keyleft:
-		case keya:
-			return false;
-		case keyright:
-		case keyd:
-			return false;
-		case keydown:
-		case keys:
-			break;
-	}
+function tick(e) {
+	playerUpdate();
+	stage.update(e);
 }
 
-function handleKeyUp(e) {
-	switch(e.keyCode) {
-		case keyup:
-		case keyw:
-			return false;
-		case keyleft:
-		case keya:
-			return false;
-		case keyright:
-		case keyd:
-			return false;
-		case keydown:
-		case keys:
-			break;
-	}
-}
+
