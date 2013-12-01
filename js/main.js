@@ -23,13 +23,20 @@ function init() {
 	
 	Ticker.setFPS(60);
 	Ticker.on("tick", tick);
-
+	document.onkeyup = handleKeyUp;
+	
 }
 
 
 function tick(e) {
 	playerUpdate();
 	stage.update(e);
+
 }
+function handleKeyUp(e)
+{
+	playerJump();
+}
+
 
 

@@ -12,3 +12,6 @@ function newPlayer(){
 function playerUpdate(){
 	player.y += 1;
 }
+function playerJump(){
+	player.y -= 50;
+}
