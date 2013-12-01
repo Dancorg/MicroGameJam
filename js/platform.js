@@ -12,10 +12,11 @@ function newPlatform(x,y,w,h){
 }
 
 function generatePlataform(){
-	if( tickCounter % 70 === 0)
+	if( tickCounter % randPlatformTick === 0)
 	{
+		randPlatformTick = Math.floor(Math.random()*30+20+randPlatformTick);
 		var y = Math.random()* 200 + 125;
-		platforms.push(newPlatform(800, y, 150, 25));
+		newPlatform(800, y, 150, 25);
 	}
 
 }
@@ -24,7 +25,7 @@ function updatePlataforms()
 {
 	for (i=0; i < platforms.length; i++)
 	{
-		platforms[i].x -= 3;
+		platforms[i].x -= 6;
 	}	
 }
 

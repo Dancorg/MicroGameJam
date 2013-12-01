@@ -14,6 +14,7 @@ var keya = 65;
 var keyd = 68;
 var keyp = 80;
 var tickCounter = 0;
+var randPlatformTick = 70;
 
 var platforms = [];
 
@@ -23,11 +24,11 @@ function init() {
 	canvas.addEventListener("click", function(event) { playerJump(); });
 
 	player = newPlayer();
-	platform = newPlatform(50,150,400,22);
+	platform = newPlatform(50,150,800,22);
 
 	Ticker.setFPS(60);
 	Ticker.on("tick", tick);
-	document.onkeyup = handleKeyUp;
+	document.onkeydown = handleKeyDown;
 }
 
 
@@ -39,7 +40,7 @@ function tick(e) {
 	updatePlataforms();
 }
 
-function handleKeyUp(e)
+function handleKeyDown(e)
 {
 	playerJump();
 }

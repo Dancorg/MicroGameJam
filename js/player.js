@@ -20,7 +20,6 @@ function playerUpdate(){
 
 function playerCollision(){
 	player.onGround = false;
-	console.log(platforms.length-1);
 	for(var index = 0; index <= platforms.length-1; index+=1){
 		var platform = platforms[index];
 
