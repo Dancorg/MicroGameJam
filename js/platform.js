@@ -17,6 +17,9 @@ function generatePlataform(){
 		randPlatformTick = Math.floor(Math.random()*30+20+randPlatformTick);
 		var y = Math.random()* 200 + 125;
 		newPlatform(800, y, 150, 25);
+		if (Math.random()*5 == 0){
+			createBird(Math.random()*150,50);
+		}
 	}
 
 }
