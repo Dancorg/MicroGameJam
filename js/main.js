@@ -17,6 +17,7 @@ var tickCounter = 0;
 var randPlatformTick = 70;
 
 var platforms = [];
+var birds = [];
 
 function init() {
 	canvas = document.getElementById("canvas");
@@ -38,6 +39,7 @@ function tick(e) {
 	tickCounter++;
 	generatePlataform();
 	updatePlataforms();
+	updateBirds();
 }
 
 function handleKeyDown(e)
